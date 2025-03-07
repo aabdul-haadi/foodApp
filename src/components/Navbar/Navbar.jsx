@@ -23,8 +23,8 @@ const SlideDown = (delay) => ({
 
 const Navbar = () => {
   return (
-<nav className=" bg-white2  bg-opacity-10 ">
-<div className="container flex justify-between items-center font-league py-4">
+    <nav className="bg-white bg-opacity-10 backdrop-blur-md">
+      <div className="container flex justify-between items-center font-league py-4">
         
         {/* Logo Section */}
         <motion.img
@@ -41,10 +41,12 @@ const Navbar = () => {
           <ul className="flex gap-6">
             {NavMenu.map((menu) => (
               <motion.li 
-                key={menu.id} 
-                className="nav-menu" 
-                data-delay={menu.delay}
-                {...SlideDown(menu.delay)}
+                key={menu.id}
+                className="nav-menu"
+                variants={SlideDown(menu.delay)}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
               >
                 <a href={menu.path} className="inline-block px-4 py-2 text-xl text-gray-700 hover:text-blue-500 transition-all">
                   {menu.name}
@@ -63,4 +65,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; // ✅ Default export
+export default Navbar; 
