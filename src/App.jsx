@@ -1,7 +1,9 @@
 import React from "react";
-import Navbar from "./components/Navbar/Navbar"; // ✅ Correct default import
-import Hero from "./components/Hero/Hero"; // ✅ Import Hero component
+import Navbar from "./components/Navbar/Navbar"; 
+import Hero from "./components/Hero/Hero"; 
 import HotDessert from "./components/HotDessert/HotDessert";
+import Banner from "./components/Banner/Banner"; 
+import { PopularRecipe } from "./components/PopularRecipe/PopularRecipe";
 
 const App = () => {
   return (
@@ -10,6 +12,8 @@ const App = () => {
         <Navbar />
         <Hero />
         <HotDessert /> 
+        <Banner /> 
+        <PopularRecipe />
       </div>
     </div>
   );

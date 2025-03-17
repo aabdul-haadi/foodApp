@@ -23,7 +23,7 @@ const SlideDown = (delay) => ({
 
 const Navbar = () => {
   return (
-    <nav className="bg-white bg-opacity-10 backdrop-blur-md">
+    <nav className=" bg-lightYellow bg-opacity-10 backdrop-blur-md">
       <div className="container flex justify-between items-center font-league py-4">
         
         {/* Logo Section */}
@@ -48,9 +48,10 @@ const Navbar = () => {
                 whileInView="animate"
                 viewport={{ once: true }}
               >
-                <a href={menu.path} className="inline-block px-4 py-2 text-xl text-gray-700 hover:text-blue-500 transition-all">
-                  {menu.name}
-                </a>
+              <a href={menu.path} className="inline-block px-4 py-2 text-xl font-bold text-gray-700 hover:text-blue-500 transition-all">
+  {menu.name}
+</a>
+
               </motion.li>
             ))}
           </ul>

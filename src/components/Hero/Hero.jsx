@@ -6,8 +6,8 @@ import Leaf from "../../assets/food/leaf.png";
 import { IoCartOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 
-// Slide-Up Animation Function
-const SlideUp = (delay) => ({
+// Slide-Up Animation Function (Now correctly exported)
+export const SlideUp = (delay) => ({
   initial: { y: "100%", opacity: 0 },
   animate: {
     y: 0,
@@ -18,7 +18,7 @@ const SlideUp = (delay) => ({
 
 const Hero = () => {
   return (
-    <main className="relative">
+    <main className="relative bg-lightYellow bg-opacity-10 backdrop-blur-md">
       <div className="container min-h-[600px] flex justify-center relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 place-items-center">
           
@@ -103,16 +103,14 @@ const Hero = () => {
 
             {/* Spoon Image - Positioned Left */}
             <motion.img
-  initial={{ opacity: 0, rotate: 60, x: 50, y: 50 }}  // Starts much further right
-  whileInView={{ opacity: 1, rotate: 75, x: 100, y: 0 }} // Moves even more to the right
-  transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-  viewport={{ once: true }}
-  src={Spoon}
-  alt="Spoon illustration"
-  className="w-[250px] absolute bottom-[-100px] left-16 rotate-[65deg] drop-shadow-lg"
-/>
-
-
+              initial={{ opacity: 0, rotate: 60, x: 50, y: 50 }}
+              whileInView={{ opacity: 1, rotate: 75, x: 100, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+              viewport={{ once: true }}
+              src={Spoon}
+              alt="Spoon illustration"
+              className="w-[250px] absolute bottom-[-100px] left-16 rotate-[65deg] drop-shadow-lg"
+            />
 
             {/* Banana Image - Positioned Right */}
             <motion.img
@@ -126,14 +124,6 @@ const Hero = () => {
             />
           </motion.div>
         </div>
-
-        {/* Responsive Background */}
-        {/* <motion.div
-          initial={{ opacity: 0, rotate: 60, x: 200, y: 100 }}
-          whileInView={{ opacity: 1, rotate: 40, x: 0, y: 0 }}
-          viewport={{ once: true }}
-          className="absolute top-0 right-[-59%] w-[50vw] h-[100vh] md:w-[40vw] md:h-[100vh] bg-yellow-200 rounded-3xl z-[-1]"
-        /> */}
       </div>
     </main>
   );
